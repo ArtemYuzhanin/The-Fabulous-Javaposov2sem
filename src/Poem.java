@@ -1,3 +1,7 @@
 public class Poem {
-    String[] stroke;
+    private final String[] stroke;
+
+    public Poem(String poem) {
+        
+    }
 }
