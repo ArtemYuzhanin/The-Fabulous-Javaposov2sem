@@ -4,10 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Transliterator {
-    public static void main(String[] args) {
-        String s = "контрнаступление";
-        System.out.println(Trans(s));
-    }
 
     public static String Trans(String s) {
         String b = "";
@@ -49,4 +45,6 @@ public class Transliterator {
 
         return b;
     }
+
+
 }
