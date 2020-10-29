@@ -2,7 +2,6 @@ package CollectionOfTasks;
 
 import java.io.FileNotFoundException;
 import java.util.*;
-import java.nio.file.*;
 import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -34,10 +33,19 @@ public class FirstList {
         pi.add(10);
         FifthTaskThreePartTwo(pi);
         System.out.println(pi);
-        SixTask test = new SixTask();
-        System.out.println(test.One());
-        System.out.println(test.Two());
-        System.out.println(test.Three());
+        chs test = new chs();
+        String p = "src\\CollectionOfTasks\\text.txt";
+        Set<String> hashSet = new HashSet<>();
+        Set<String> linkedHashSet = new LinkedHashSet<>();
+        Set<String> treeSet = new TreeSet<>();
+
+        chs.One(p, hashSet);
+        chs.One(p, linkedHashSet);
+        chs.One(p, treeSet);
+
+        System.out.println(hashSet);
+        System.out.println(linkedHashSet);
+        System.out.println(treeSet);
 
     }
 
@@ -159,13 +167,11 @@ public class FirstList {
         }
     }
 
-    public static class SixTask {
-        File f = new File("src\\CollectionOfTasks\\text.txt");
-        Pattern pattern = Pattern.compile(",|\\.|:|!|\\?");
+    public static class chs {
+        static Pattern pattern = Pattern.compile(",|\\.|:|!|\\?");
 
-
-        private HashSet<String> One() throws  Exception{
-            HashSet a = new HashSet<String>();
+        private static void One(String p, Set<String> seth) throws  Exception{
+            File f = new File(p); //"src\\CollectionOfTasks\\text.txt"
             Scanner in = new Scanner(f, "utf-8");
             while (in.hasNext()) {
                 String s = in.next();
@@ -174,42 +180,11 @@ public class FirstList {
                 if (matcher.find()) {
                     s = s.substring(0, s.length() - 1);
                 }
-                a.add(s);
+                seth.add(s);
             }
-            return a;
         }
 
-        private LinkedHashSet<String> Two() throws  Exception{
-            LinkedHashSet a = new LinkedHashSet<String>();
-            Scanner in = new Scanner(f, "utf-8");
-            while (in.hasNext()) {
-                String s = in.next();
-                s = s.substring(0, 1).toLowerCase() + s.substring(1);
-                Matcher matcher = pattern.matcher(s);
-                if (matcher.find()) {
-                    s = s.substring(0, s.length() - 1);
-                }
-                a.add(s);
-            }
-            return a;
-        }
-
-        private TreeSet<String> Three() throws  Exception{
-            TreeSet a = new TreeSet<String>();
-            Scanner in = new Scanner(f, "utf-8");
-            while (in.hasNext()) {
-                String s = in.next();
-                s = s.substring(0, 1).toLowerCase() + s.substring(1);
-                Matcher matcher = pattern.matcher(s);
-                if (matcher.find()) {
-                    s = s.substring(0, s.length() - 1);
-                }
-                a.add(s);
-            }
-            return a;
-        }
-
-        public SixTask() throws FileNotFoundException {
+        public chs() throws FileNotFoundException {
             }
         }
 
