@@ -8,11 +8,12 @@ public class Pereschet {
     public static HashMap Schet(String s) {
         HashMap<Character, Integer> spisok = new HashMap();
         for (int i = 0; i<s.length(); i++) {
-            if (spisok.containsKey(s.charAt(i))) {
-                spisok.put(s.charAt(i), spisok.get(s.charAt(i)) + 1);
+            char c = s.charAt(i);
+            if (spisok.containsKey(c)) {
+                spisok.put(c, spisok.get(c) + 1);
             }
             else {
-                spisok.put(s.charAt(i), 1);
+                spisok.put(c, 1);
             }
         }
         return spisok;

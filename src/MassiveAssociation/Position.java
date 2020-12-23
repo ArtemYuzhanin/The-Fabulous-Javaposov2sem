@@ -13,15 +13,16 @@ public class Position {
     public static HashMap Pose(String s) {
         HashMap<Character, List<Integer>> mesta = new HashMap();
         for (int i = 0; i<s.length(); i++) {
-            if (mesta.containsKey(s.charAt(i))) {
-                List l = mesta.get(s.charAt(i));
+            char c = s.charAt(i);
+            if (mesta.containsKey(c)) {
+                List l = mesta.get(c);
                 l.add(i+1);
-                mesta.put(s.charAt(i), l);
+                mesta.put(c, l);
             }
             else {
                 List m = new ArrayList();
                m.add(i+1);
-                mesta.put(s.charAt(i), m);
+                mesta.put(c, m);
             }
         }
         return mesta;
