@@ -1,23 +1,22 @@
 package Nasledovanie;
 
-public class Square implements Figure{
+public class Square extends Parallelogram{
     private final double side;
     public Square(double side) {
+        super(side,side);
         this.side = side;
     }
 
-    @Override
     public double area() {
         return side*side;
     }
 
-    @Override
-    public double perimiter() {
-        return 4*side;
+    public String info() {
+        return "квадрат со стороной "+side;
     }
 
     @Override
-    public String info() {
-        return "квадрат со стороной "+side;
+    public double capacity() {
+        return 0.0625;
     }
 }

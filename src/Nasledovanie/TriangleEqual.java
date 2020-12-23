@@ -20,4 +20,9 @@ public class TriangleEqual implements Figure {
     public String info() {
         return "равносторонний треугольник со стороной "+side;
     }
+
+    @Override
+    public double capacity() {
+        return 1/(12*Math.sqrt(3));
+    }
 }

@@ -11,7 +11,7 @@ public class FiguresExamples {
         figures[0] = new TriangleRight(8,10);
 
         for (Figure figura : figures ) {
-            System.out.println(figura.info() + " а его площадь " + String.format("%.2f", figura.area())+" а его периметр "+String.format("%.2f", figura.perimiter()));
+            System.out.println(figura.info() + " а его площадь - " + String.format("%.2f", figura.area())+" а его периметр - "+String.format("%.2f", figura.perimiter())+" а уж его емкость - "+Figure.capacity(figura)+" или - "+figura.capacity());
         }
     }
 }
