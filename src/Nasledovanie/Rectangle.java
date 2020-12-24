@@ -17,4 +17,8 @@ public class Rectangle extends Parallelogram {
     public String info() {
         return "прямоугольник с шириной "+width+" и высотой "+height;
     }
+
+    public double capacity() {
+        return area()/(perimiter()*perimiter());
+    }
 }

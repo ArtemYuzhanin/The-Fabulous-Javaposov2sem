@@ -1,8 +1,10 @@
 package Nasledovanie;
 
-public class TriangleEqual implements Figure {
+public class TriangleEqual extends Triangle {
     private final double side;
+
     public TriangleEqual(double side) {
+        super(side,side,side);
         this.side = side;
     }
 

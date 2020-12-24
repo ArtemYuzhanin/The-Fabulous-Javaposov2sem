@@ -1,9 +1,11 @@
 package Nasledovanie;
 
-public class TriangleRight implements Figure {
+public class TriangleRight extends Triangle {
     private final double width;
     private final double height;
+
     public TriangleRight(double width, double height) {
+        super(width,height,Math.sqrt(width*width+height*height));
         this.width = width;
         this.height = height;
     }
@@ -11,11 +13,6 @@ public class TriangleRight implements Figure {
     @Override
     public double area() {
         return width*height/2;
-    }
-
-    @Override
-    public double perimiter() {
-        return Math.sqrt(width*width+height*height)+width+height;
     }
 
     @Override
