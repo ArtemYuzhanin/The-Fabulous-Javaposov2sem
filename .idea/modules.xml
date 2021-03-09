@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/src/FXGraphica/FXGraphica.iml" filepath="$PROJECT_DIR$/src/FXGraphica/FXGraphica.iml" />
       <module fileurl="file://$PROJECT_DIR$/SystemTri.iml" filepath="$PROJECT_DIR$/SystemTri.iml" />
     </modules>
   </component>
